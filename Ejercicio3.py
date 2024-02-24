@@ -1,14 +1,19 @@
 """
 Ejercicio #3.
 
-Construya un programa que solicite al usuario los datos enteros A y B
-y muestre el resultado de la siguiente expresion (A+B)2/3.
-
+Desarrolle un programa que calcule el total a pagar por la compra de un producto.
+Debe solicitar al usuario el precio unitario de un producto y la cantidad que desea comprar,
+si la compra es al menos 12 unidades aplique un 20% de descuento.
 """
 
-A=int(input("Digite el valor de A: "))
-B=int(input("Digite el valor de B: "))
+producto="Camisa"
+descuento=0.0
 
-resultado=(A+B)**2/3
+precio=float(input(f"Digite el precio de la {producto}= "))
+cantidad=int(input("Digite la cantidad= "))
 
-print("\nEl resultado de (A+B)^2/3 es:", resultado)
+if cantidad>=12:
+    descuento=0.20
+
+totalPagar=precio-(precio*descuento)
+print("Total a pagar= ", totalPagar)

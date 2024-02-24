@@ -1,17 +1,27 @@
 """
-Ejercico #2.
+Ejercicio #2.
 
-Elabore un programa que solicite al usuario la edad y calcule cuantos años
-tendra la persona en 5 años.
-Al finaliza mprime el siguiente mensaje "Dentro de 5 años tendra: " y se le
-muestra el valor de la edad proyectada.
+Realice un programa que le solicite al usuario el nombre, y dos valores numericos.
+El programa debera mostrar en pantalla el resultado de las siguientes operaciones matematicas.
+-Suma.
+-Resta.
+-Multiplicacion.
+-Division.
+-Division Entera.
+-Potencia.
 
 """
 
-edadActual=int(input("Digite su edad: "))
-edadProyectada=edadActual + 5
+nombreUsuario=input("Digite su nombre: ")
 
-print("Dentro de 5 años, tendra: ", edadProyectada, "años")
+A=float(input("Digite el primer numero: "))
+B=float(input("Digite el segundo numero: "))
 
+print(nombreUsuario, "El resultado de las opersciones es: \n")
 
-
+print("Suma = ", A + B,"\n")
+print("Resta = ", A - B,"\n")
+print("Multiplicacion = ", A * B,"\n")
+print("Division = ", A / B,"\n")
+print("Division entera = ", A // B,"\n")
+print("Potencia = ", A ** B,"\n")

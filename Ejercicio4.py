@@ -1,14 +1,20 @@
+
 """
 Ejercicio #4.
+    Desarrolle un programa que muestre el monto a pagar por una compra.
+    Debe tomar en cuenta que si el monto total es superior a $1000,
+    debe aplicarse un 15% de descuento.
+"""
 
-Desarrole un programa que le solicite un numero al usuario
-y calcule el cuadrado y el cubo de este."""
 
-numero=int(input("Digite un numero: "))
 
-cuadrado=numero **2
-cubo=numero **3
+monto=float(input("Monto de la compra: "))
+descuento=0.0
 
-print(f"\nEl cuadrado de:  {numero} es {cuadrado}")
-print(f"El cubo de:      {numero} es {cubo}\n")
-      
+if monto > 1000 :
+    descuento=0.15
+
+totalPagar=monto-(monto*descuento)
+print("Total a pagar: ",totalPagar )
+
+
