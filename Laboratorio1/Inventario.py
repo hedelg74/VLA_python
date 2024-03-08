@@ -4,6 +4,21 @@ def main():
     import time
     import os
     
+    def validar_menu(n_items,descripcion):
+        while True:
+            try:
+                opcion=int(input(f"\nElige {descripcion}: "))
+            except ValueError:
+                print("Debes digitar una opcion valida.")
+                continue
+
+            if opcion > n_items:
+                print("Debes digitar una opcion valida.")
+                continue
+            else: break
+
+        return opcion
+
     def menu_login():
         print("\nPERFILES.")
         print("--------------------------")
@@ -12,13 +27,12 @@ def main():
         print("3. Cliente/Proveedor.")
         print("4. Salir.")
 
-        opcion=int(input("\nElige tu perfil: "))
-
+        opcion=validar_menu(4,"un perfil")
         return opcion
         
     def menu_principal():
         print("""\nSISTEMA DE INVENTARIO.
-    --------------------------
+--------------------------
         1. Agregar.
         2. Eliminar.
         3. Actualizar.
@@ -26,32 +40,29 @@ def main():
         5. Mantenimiento Usuarios.
         6. Salir.""")
 
-        opcion=int(input("\nElige una accion: "))
-
+        opcion=validar_menu(6,"una opcion")
         return opcion
 
     def menu_mantenimiento_usuarios():
         print("""\nMANTENIMIENTO USUARIOS.
-    -----------------------
+-----------------------
         1. Agregar.
         2. Actualizar.
         3. Imprimir.
         4. Salir.""")
 
-        opcion=int(input("\nElige una accion: "))
+        opcion=validar_menu(4,"una opcion")    
         return opcion
     
     def menu_actualizar_usuario():
         print("""\nACTUALIZAR CREDENCIALES DE USUARIO.
-    -----------------------
+-----------------------
         1. Clave.
         2. Pin.
         3. Rol.
         4. Estado.
         5. Salir.""")
-
-        opcion=int(input("\nElige una accion: "))
-
+        opcion=validar_menu(5,"una opcion")
         return opcion
 
 
@@ -69,7 +80,11 @@ def main():
                 if clave == user[1]:
                     if pin == user[2]:
                         if rol == user[3]:
-                            return True
+                            if user[4]=="Activo":
+                                return True
+                            else:
+                                print("\nSu cuenta esta inactiva, consulte al administrador.\n")
+                                return False
                 
         else:
             print("\nCredenciales no coinciden, intente de nuevo.\n")
@@ -198,6 +213,7 @@ def main():
         if opcion==1: rol="adm"
         elif opcion==2: rol="per"
         elif opcion==3: rol="clp"
+        elif opcion==4: break
             
         nombre=input("\nDigite su usuario: ")
         clave=input("Digite su clave: ")
